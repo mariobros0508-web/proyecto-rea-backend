@@ -1,0 +1,50 @@
+{% extends 'rea_api/base.html' %}
+{% block title %}Lista de Recursos{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">📚 Recursos Educativos Abiertos</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for recurso in recursos %}
+      <tr>
+        <td>{{ recurso.titulo }}</td>
+        <td>{{ recurso.descripcion|truncatewords:10 }}</td>
+        <td>{{ recurso.fecha_subida }}</td>
+        <td>
+          {% if recurso.url_acceso %}
+          <a href="{{ recurso.url_acceso }}" target="_blank" class="btn btn-sm btn-outline-info">📄 Ver PDF</a>
+          {% endif %}
+          
+          <a href="{% url 'recurso_update' recurso.pk %}" class="btn btn-sm btn-warning">✏️ Editar</a>
+          <a href="{% url 'recurso_eliminar' recurso.pk %}" class="btn btn-sm btn-danger">🗑️ Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("/api/recursos/")
+    .then(response => response.json())
+    .then(data => {
+        // console.log("Datos de la API cargados:", data);
+        // El script ya no sobreescribe la tabla, solo llama al API.
+    })
+    .catch(error => {
+        console.error('Error cargando los recursos desde la API:', error);
+    });
+});
+</script>
+{% endblock %}

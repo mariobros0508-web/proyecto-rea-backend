@@ -1,0 +1,9 @@
+{% extends 'rea_api/base.html' %}
+{% block title %}Detalle Recurso{% endblock %}
+{% block content %}
+<h2>{{ recurso.titulo }}</h2>
+<p>{{ recurso.descripcion }}</p>
+<p><strong>Curador:</strong> {{ recurso.curador }}</p>
+<p><strong>Categoría:</strong> {{ recurso.categoria }}</p>
+<a class="btn btn-secondary" href="{% url 'recurso_list' %}">Volver</a>
+{% endblock %}
