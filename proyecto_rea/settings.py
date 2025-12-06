@@ -182,3 +182,14 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True # La sesión expira si se cierra el naveg
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Agregar el host de Render a la lista
+ALLOWED_HOSTS = [
+    'proyecto-rea-backend.onrender.com',
+    'localhost',  # Siempre mantén el localhost para desarrollo local
+    '127.0.0.1',  # También es bueno tener 127.0.0.1
+]
+
+# Opcional (Recomendado): Para manejar subdominios y el host de Render
+if 'RENDER_EXTERNAL_HOSTNAME' in os.environ:
+    ALLOWED_HOSTS.append(os.environ['RENDER_EXTERNAL_HOSTNAME'])
