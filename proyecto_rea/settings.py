@@ -94,10 +94,15 @@ DATABASES = {
 }
 
 if 'DATABASE_URL' in os.environ:
-    DATABASES['default'] = dj_database_url.config(
-        conn_max_age=600,
-        conn_health_check=True,
-    )
+    # CONFIGURACIÓN DE PRODUCCIÓN (PostgreSQL)
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL'),
+            conn_max_age=600,
+            conn_health_checks=True, # <-- CORREGIDO: ahora es 'conn_health_checks' (en plural)
+        )
+    }
+# ... (el resto del código)
 
 
 # Password validation
