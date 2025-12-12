@@ -1,7 +1,7 @@
 [
    
     {
-        "model": "recursos.licencia", 
+        "model": "recurso.licencia", 
         "pk": 1,
         "fields": {
             "nombre": "Dominio Público (CC0)",
@@ -10,7 +10,7 @@
         }
     },
     {
-        "model": "recursos.licencia",
+        "model": "recurso.licencia",
         "pk": 2,
         "fields": {
             "nombre": "Creative Commons BY",
@@ -19,7 +19,7 @@
         }
     },
     {
-        "model": "recursos.licencia",
+        "model": "recurso.licencia",
         "pk": 3,
         "fields": {
             "nombre": "Copyright (Uso Exclusivo)",
@@ -40,23 +40,23 @@
         "fields": { "nombre": "Educación Secundaria" }
     },
     {
-        "model": "recursos.niveleducativo",
+        "model": "recurso.niveleducativo",
         "pk": 3,
         "fields": { "nombre": "Educación Superior / Universitaria" }
     },
 
     {
-        "model": "recursos.categoria",
+        "model": "recurso.categoria",
         "pk": 1,
         "fields": { "nombre": "Programación y Desarrollo de Software" }
     },
     {
-        "model": "recursos.categoria",
+        "model": "recurso.categoria",
         "pk": 2,
         "fields": { "nombre": "Matemáticas" }
     },
     {
-        "model": "recursos.categoria",
+        "model": "recurso.categoria",
         "pk": 3,
         "fields": { "nombre": "Ciencias Sociales e Historia" }
     }
