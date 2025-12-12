@@ -1,10 +1,10 @@
 from django.db import migrations
 
 def cargar_datos_rea(apps, schema_editor):
-    # Obtenemos los modelos
-    Licencia = apps.get_model('recursos', 'Licencia')
-    NivelEducativo = apps.get_model('recursos', 'NivelEducativo')
-    Categoria = apps.get_model('recursos', 'Categoria')
+    # ✅ USAMOS 'rea_api' QUE ES EL NOMBRE REAL DE TU APP
+    Licencia = apps.get_model('rea_api', 'Licencia')
+    NivelEducativo = apps.get_model('rea_api', 'NivelEducativo')
+    Categoria = apps.get_model('rea_api', 'Categoria')
 
     # 1. Crear Licencias
     Licencia.objects.get_or_create(nombre="Dominio Público (CC0)", url_legal="https://creativecommons.org/")
@@ -23,7 +23,8 @@ def cargar_datos_rea(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('recursos', '0001_initial'), # Revisa que el nombre del archivo 0001 sea exacto
+        # ✅ CAMBIADO A 'rea_api' PARA QUE COINCIDA CON TU PROYECTO
+        ('rea_api', '0001_initial'), 
     ]
 
     operations = [
