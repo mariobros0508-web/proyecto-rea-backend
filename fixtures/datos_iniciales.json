@@ -1,0 +1,63 @@
+[
+   
+    {
+        "model": "recursos.licencia", 
+        "pk": 1,
+        "fields": {
+            "nombre": "Dominio Público (CC0)",
+            "descripcion": "El recurso puede ser usado sin restricciones de copyright.",
+            "url_legal": "https://creativecommons.org/publicdomain/zero/1.0/deed.es"
+        }
+    },
+    {
+        "model": "recursos.licencia",
+        "pk": 2,
+        "fields": {
+            "nombre": "Creative Commons BY",
+            "descripcion": "Se permite el uso, distribución y adaptación, citando al autor.",
+            "url_legal": "https://creativecommons.org/licenses/by/4.0/deed.es"
+        }
+    },
+    {
+        "model": "recursos.licencia",
+        "pk": 3,
+        "fields": {
+            "nombre": "Copyright (Uso Exclusivo)",
+            "descripcion": "Requiere permiso directo del autor o de la entidad propietaria.",
+            "url_legal": "https://www.copyright.gov/"
+        }
+    },
+
+    
+    {
+        "model": "recursos.niveleducativo",
+        "pk": 1,
+        "fields": { "nombre": "Educación Primaria" }
+    },
+    {
+        "model": "recursos.niveleducativo",
+        "pk": 2,
+        "fields": { "nombre": "Educación Secundaria" }
+    },
+    {
+        "model": "recursos.niveleducativo",
+        "pk": 3,
+        "fields": { "nombre": "Educación Superior / Universitaria" }
+    },
+
+    {
+        "model": "recursos.categoria",
+        "pk": 1,
+        "fields": { "nombre": "Programación y Desarrollo de Software" }
+    },
+    {
+        "model": "recursos.categoria",
+        "pk": 2,
+        "fields": { "nombre": "Matemáticas" }
+    },
+    {
+        "model": "recursos.categoria",
+        "pk": 3,
+        "fields": { "nombre": "Ciencias Sociales e Historia" }
+    }
+]
